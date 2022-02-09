@@ -1,7 +1,6 @@
 -- ahays nvim config 11/20/21
 vim.g.mapleader = " "
 
-
 require('plugins')
 
 -- options
@@ -69,6 +68,9 @@ vim.cmd[[set undofile]]
 vim.opt.termguicolors = true
 vim.cmd[[colorscheme holokai]]
 
+vim.cmd[[highlight CursorLineNr cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#2E3436 guifg=#C4A000]]
+vim.opt.cursorline = true
+
 -- Automatically switch relative number on and off depending on mode
 -- Credit: https://jeffkreeftmeijer.com/vim-number/
 vim.api.nvim_exec([[
@@ -104,16 +106,6 @@ end
 -- Mappings
 
 map('n', '<leader>v', ':e $MYVIMRC<CR>')
-
--- LSP
-map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
-map('n', 'gh', ':lua vim.lsp.buf.hover()<CR>')
-map('n', 'ga', ':Telescope lsp_code_actions<CR>')
-map('n', 'gA', ':Telescope lsp_range_code_actions<CR>')
-map('n', 'gD', ':lua vim.lsp.buf.implementation()<CR>')
-map('n', '<c-k>', ':lua vim.lsp.buf.signature_help()<CR>')
-map('n', 'gr', ':lua vim.lsp.buf.references()<CR>')
-map('n', 'gR', ':lua vim.lsp.buf.rename()<CR>')
 
 -- colorbuddy config for cmp text
 --local Group = require("colorbuddy.group").Group
