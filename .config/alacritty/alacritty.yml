@@ -65,3 +65,5 @@ cursor:
 key_bindings:
   - { key: Comma, mods: Command, command:
       {program: "sh", args: ["-c","open ~/.config/alacritty/alacritty.yml"]}}
+  - { key: F,  mods: Alt,           chars: "\x1bf"                       }
+  - { key: B,  mods: Alt,           chars: "\x1bb"                       }

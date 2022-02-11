@@ -50,13 +50,10 @@ vim.opt.foldnestmax=10
 --vim.opt.spell = true
 --vim.opt.spelllang = { 'en_us' }
 
--- Setup netrw like nerdtree
--- Superceded by vim-vinegar
---vim.g.netrw_banner = false
 vim.g.netrw_liststyle = 3
---vim.g.netrw_browse_split = 4
---vim.g.netrw_altv = 1
---vim.g.netrw_winsize = 75
+
+-- vim-terraform
+vim.g.terraform_fmt_on_save = true
 
 -- enable loading the plugin files for specific file types
 vim.cmd('filetype plugin on')
