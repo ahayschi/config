@@ -3,6 +3,12 @@ vim.g.mapleader = " "
 
 require('plugins')
 
+-- set colorscheme (order is important)
+vim.opt.termguicolors = true
+vim.cmd[[colorscheme gruvbox]]
+--vim.cmd[[colorscheme no-clown-fiesta]]
+--vim.cmd[[colorscheme holokai]]
+
 -- options
 -- :help <variable>
 
@@ -61,9 +67,6 @@ vim.cmd('filetype plugin on')
 -- save undo history
 vim.cmd[[set undofile]]
 
--- set colorscheme (order is important)
-vim.opt.termguicolors = true
-vim.cmd[[colorscheme holokai]]
 
 vim.cmd[[highlight CursorLineNr cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#2E3436 guifg=#C4A000]]
 vim.opt.cursorline = true

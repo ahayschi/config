@@ -8,6 +8,9 @@ end
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     use 'changyuheng/color-scheme-holokai-for-vim'
+    use 'aktersnurra/no-clown-fiesta.nvim'
+    use 'morhetz/gruvbox'
+    use 'tpope/vim-unimpaired'
     use {
         'lewis6991/gitsigns.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
