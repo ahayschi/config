@@ -5,8 +5,10 @@ require('plugins')
 
 -- set colorscheme (order is important)
 vim.opt.termguicolors = true
-vim.cmd[[colorscheme gruvbox]]
---vim.cmd[[colorscheme no-clown-fiesta]]
+--vim.cmd[[colorscheme Oblivion]]
+--vim.cmd[[colorscheme aldmeris]]
+--vim.cmd[[colorscheme gruvbox]]
+vim.cmd[[colorscheme no-clown-fiesta]]
 --vim.cmd[[colorscheme holokai]]
 
 -- options
@@ -67,7 +69,6 @@ vim.cmd('filetype plugin on')
 -- save undo history
 vim.cmd[[set undofile]]
 
-
 vim.cmd[[highlight CursorLineNr cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#2E3436 guifg=#C4A000]]
 vim.opt.cursorline = true
 
@@ -106,6 +107,40 @@ end
 -- Mappings
 
 map('n', '<leader>v', ':e $MYVIMRC<CR>')
+
+map('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
+map('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+
+-- Close location list when navigating out by cr
+vim.api.nvim_exec([[
+autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
+]], false)
+
+-- Toggle diagnostics in location list 
+--vim.g.diagnostics_loclist = false
+--function _G.toggle_diagnostics_loclist()
+ -- if vim.g.diagnostics_loclist then
+  --  vim.g.diagnostics_loclist = false
+   -- vim.cmd[[window lcl<CR>]]
+--  else
+ --   vim.g.diagnostics_loclist = true
+  --  vim.diagnostic.setloclist()
+--  end
+--end
+vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>ds', '<cmd> lua vim.diagnostic.setloclist()<CR>', {silent=true, noremap=true})
+
+-- Toggle diagnostics 
+vim.g.diagnostics_visible = true
+function _G.toggle_diagnostics()
+  if vim.g.diagnostics_visible then
+    vim.g.diagnostics_visible = false
+    vim.diagnostic.disable()
+  else
+    vim.g.diagnostics_visible = true
+    vim.diagnostic.enable()
+  end
+end
+vim.api.nvim_buf_set_keymap(0, 'n', '<Leader>l', ':call v:lua.toggle_diagnostics()<CR>', {silent=true, noremap=true})
 
 -- colorbuddy config for cmp text
 --local Group = require("colorbuddy.group").Group

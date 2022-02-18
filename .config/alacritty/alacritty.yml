@@ -99,7 +99,37 @@ schemes:
       cyan: '#34E2E2'
       white: '#EEEEEC'
 
-colors: *gruvbox_dark
+  no-clown-fiesta: &no-clown-fiesta
+    primary:
+      background: '#171717'
+      foreground: '#D0D0D0'
+      bright_foreground: '#FFFFFF'
+
+    cursor:
+      text: '#003541'
+      cursor: '#839496'
+
+    bright:
+      black: '#D0D0D0'
+      red: '#D16969'
+      green: '#608B4E'
+      yellow: '#DCDCAA'
+      blue: '#569CD6'
+      magenta: '#D16D9E'
+      cyan: '#4EC9B0'
+      white: '#EEEEEC'
+
+    dim:
+      black: '#555753'
+      red: '#D16969'
+      green: '#608B4E'
+      yellow: '#DCDCAA'
+      blue: '#569CD6'
+      magenta: '#D16D9E'
+      cyan: '#4EC9B0'
+      white: '#EEEEEC'
+
+colors: *no-clown-fiesta
 
 selection:
   # Select text will be copied to the primary clipboard.

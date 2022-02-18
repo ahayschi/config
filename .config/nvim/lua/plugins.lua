@@ -11,6 +11,8 @@ return require('packer').startup(function(use)
     use 'aktersnurra/no-clown-fiesta.nvim'
     use 'morhetz/gruvbox'
     use 'tpope/vim-unimpaired'
+    use 'veloce/vim-aldmeris'
+    use 'miguelmota/oblivion.vim'
     use {
         'lewis6991/gitsigns.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
