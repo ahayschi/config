@@ -4,12 +4,17 @@ vim.g.mapleader = " "
 require('plugins')
 
 -- set colorscheme (order is important)
-vim.opt.termguicolors = true
+--vim.opt.termguicolors = false
 --vim.cmd[[colorscheme Oblivion]]
+--vim.g.aldmeris_termcolors = "tango"
 --vim.cmd[[colorscheme aldmeris]]
+vim.g.gruvbox_contrast_dark = 'hard'
 --vim.cmd[[colorscheme gruvbox]]
 vim.cmd[[colorscheme no-clown-fiesta]]
 --vim.cmd[[colorscheme holokai]]
+--vim.g.ayucolor = "dark"
+--vim.cmd[[colorscheme ayu]]
+--vim.cmd[[colorscheme nord]]
 
 -- options
 -- :help <variable>
@@ -96,6 +101,12 @@ vim.api.nvim_exec([[
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
+]], false)
+
+
+-- gofmt on file write
+vim.api.nvim_exec([[
+autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 100)
 ]], false)
 
 local function map(mode, lhs, rhs, opts)

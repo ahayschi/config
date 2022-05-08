@@ -27,6 +27,7 @@ schemes:
   gruvbox_dark: &gruvbox_dark
     primary:
       # hard contrast background - '#1d2021'
+      # #282828
       background:        &gruvbox_dark_bg '#282828'
       # soft contrast background - '#32302f'
       foreground:        '#ebdbb2'
@@ -129,6 +130,134 @@ schemes:
       cyan: '#4EC9B0'
       white: '#EEEEEC'
 
+  tango-dark: &tango-dark
+    primary:
+      background: '0x2e3436'
+      foreground: '0xd3d7cf'
+      
+    normal:
+      black: '0x2e3436'
+      red: '0xcc0000'
+      green: '0x4e9a06'
+      yellow: '0xc4a000'
+      blue: '0x3465a4'
+      magenta: '0x75507b'
+      cyan: '0x06989a'
+      white: '0xd3d7cf'
+
+    bright:
+      black: '0x555753'
+      red: '0xef2929'
+      green: '0x8ae234'
+      yellow: '0xfce94f'
+      blue: '0x729fcf'
+      magenta: '0xad7fa8'
+      cyan: '0x34e2e2'
+      white: '0xeeeeec'
+
+  ayu-dark: &ayu-dark
+    primary:
+      #      background: '0x0A0E14'
+      background: '0x050608'
+      foreground: '0x58564d' #;0xB3B1AD'
+
+    # Normal colors
+    normal:
+      black:   '0x01060E'
+      red:     '0xEA6C73'
+      green:   '0x91B362'
+      yellow:  '0xF9AF4F'
+      blue:    '0x53BDFA'
+      magenta: '0xFAE994'
+      cyan:    '0x90E1C6'
+      white:   '0xC7C7C7'
+
+    # Bright colors
+    bright:
+      black:   '0x686868'
+      red:     '0xF07178'
+      green:   '0xC2D94C'
+      yellow:  '0xFFB454'
+      blue:    '0x59C2FF'
+      magenta: '0xFFEE99'
+      cyan:    '0x95E6CB'
+      white:   '0xFFFFFF'
+
+  ayu-dark2: &ayu-dark2
+    primary:
+      background: '0x0f1419'
+      foreground: '0xe6e1cf'
+
+    # Normal colors
+    normal:
+      black:   '0x000000'
+      red:     '0xf34a4a'
+      green:   '0xbae67e'
+      yellow:  '0xffee99'
+      blue:    '0x73d0ff'
+      magenta: '0xd4bfff'
+      cyan:    '0x83CEC6'
+      white:   '0xf2f2f2'
+
+    # Bright colors
+    bright:
+      black:   '0x737d87'
+      red:     '0xff3333'
+      green:   '0xc2d94c'
+      yellow:  '0xe7c547'
+      blue:    '0x59c2ff'
+      magenta: '0xb77ee0'
+      cyan:    '0x5ccfe6'
+      white:   '0xffffff'
+
+  nord: &nord
+    primary:
+      background: '#2e3440'
+      foreground: '#d8dee9'
+      dim_foreground: '#a5abb6'
+    cursor:
+      text: '#2e3440'
+      cursor: '#d8dee9'
+    vi_mode_cursor:
+      text: '#2e3440'
+      cursor: '#d8dee9'
+    selection:
+      text: CellForeground
+      background: '#4c566a'
+    search:
+      matches:
+        foreground: CellBackground
+        background: '#88c0d0'
+      bar:
+        background: '#434c5e'
+        foreground: '#d8dee9'
+    normal:
+      black: '#3b4252'
+      red: '#bf616a'
+      green: '#a3be8c'
+      yellow: '#ebcb8b'
+      blue: '#81a1c1'
+      magenta: '#b48ead'
+      cyan: '#88c0d0'
+      white: '#e5e9f0'
+    bright:
+      black: '#4c566a'
+      red: '#bf616a'
+      green: '#a3be8c'
+      yellow: '#ebcb8b'
+      blue: '#81a1c1'
+      magenta: '#b48ead'
+      cyan: '#8fbcbb'
+      white: '#eceff4'
+    dim:
+      black: '#373e4d'
+      red: '#94545d'
+      green: '#809575'
+      yellow: '#b29e75'
+      blue: '#68809a'
+      magenta: '#8c738'
+      cyan: '#6d96a5'
+      white: '#aeb3bb'
 colors: *no-clown-fiesta
 
 selection:

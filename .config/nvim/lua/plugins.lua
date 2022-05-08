@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
     use 'tpope/vim-unimpaired'
     use 'veloce/vim-aldmeris'
     use 'miguelmota/oblivion.vim'
+    use 'ayu-theme/ayu-vim'
+    use 'arcticicestudio/nord-vim'
     use {
         'lewis6991/gitsigns.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
@@ -152,7 +154,7 @@ return require('packer').startup(function(use)
             -- nvim-cmp almost supports LSP's capabilities
             -- so let's use it.
             local nvim_lsp = require('lspconfig')
-            local servers = { 'rust_analyzer', 'terraformls' }
+            local servers = { 'rust_analyzer', 'terraformls', 'gopls' }
 
             for _, lsp in ipairs(servers) do
                 nvim_lsp[lsp].setup {
