@@ -1,0 +1,95 @@
+-- options
+-- :help <variable>
+
+-- number of lines remembered in command history table
+vim.opt.history = 1000
+-- precede each line with its line number
+vim.opt.number = true
+-- options for Insert mode completion
+vim.opt.completeopt = { 'menuone', 'noselect' }
+-- enable mouse support all modes
+vim.opt.mouse = 'a'
+-- vertical split will put the new window to the right (:vsplit)
+vim.opt.splitright = true
+-- horizontal split will put the new window below (:split)
+vim.opt.splitbelow = true
+-- in insert mode: use appropriate number of spaces to insert a <Tab>
+vim.opt.expandtab = true
+-- number of spaces that a <Tab> in the file counts for.
+vim.opt.tabstop = 2
+-- number of spaces indented with '>'
+vim.opt.shiftwidth = 2
+vim.opt.shiftround = true
+-- ignore case of normal letters in a pattern unless /C or capital in search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+-- show where the searched pattern is matching as you type
+vim.opt.incsearch = true
+vim.opt.hlsearch = false
+-- do not save when switching buffers
+vim.opt.hidden = true
+-- always draw the sign column
+vim.opt.signcolumn = 'yes'
+-- swap file will be written to disk if nothing is typed in this many ms
+vim.opt.updatetime = 520
+vim.opt.undofile = true
+-- do not backup file when writing to an existing file
+vim.opt.backup = false
+-- all folds are closed
+vim.opt.foldenable = true
+-- folds with a higher level will be closed
+vim.opt.foldlevel = 99
+-- sets 'foldlevel' when starting to edit another buffer in a window
+vim.opt.foldlevelstart = 10
+-- sets the maximum nesting of folds
+vim.opt.foldnestmax = 10
+--vim.opt.spell = true
+--vim.opt.spelllang = { 'en_us' }
+
+vim.cmd [[colorscheme no-clown-fiesta]]
+
+vim.g.netrw_liststyle = 3
+
+-- vim-terraform
+vim.g.terraform_fmt_on_save = true
+
+-- enable loading the plugin files for specific file types
+vim.cmd('filetype plugin on')
+
+-- save undo history
+vim.cmd [[set undofile]]
+
+vim.cmd [[highlight CursorLineNr cterm=NONE ctermbg=15 ctermfg=8 gui=NONE guibg=#2E3436 guifg=#C4A000]]
+vim.opt.cursorline = true
+
+vim.opt.showcmd = true
+vim.opt.laststatus = 2
+vim.opt.autowrite = true
+vim.opt.autoread = true
+
+vim.cmd [[ set noswapfile ]]
+
+-- Highlight on yank
+vim.api.nvim_exec([[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]], false)
+
+-- Close location list when navigating out by cr
+vim.api.nvim_exec([[
+autocmd FileType qf nmap <buffer> <cr> <cr>:lcl<cr>
+]], false)
+
+-- Diagnostics
+vim.diagnostic.config({
+  virtual_text = {
+    source = "always", -- Or "if_many"
+    prefix = '■',    -- Could be '■', '▎', 'x'
+  },
+  severity_sort = true,
+  float = {
+    source = "always", -- Or "if_many"
+  },
+})

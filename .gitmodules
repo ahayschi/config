@@ -4,3 +4,6 @@
 [submodule ".config/oh-my-zsh/custom/themes/powerlevel10k"]
 	path = .config/oh-my-zsh/custom/themes/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
+[submodule ".config/oh-my-zsh/custom/plugins/nix-zsh-completions"]
+	path = .config/oh-my-zsh/custom/plugins/nix-zsh-completions
+	url = https://github.com/nix-community/nix-zsh-completions
