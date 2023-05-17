@@ -1,7 +1,9 @@
+bindkey -v
 # don't duplicate lines or lines starting with space in the history
 HISTCONTROL=ignoreboth
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#808080'
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
