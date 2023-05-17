@@ -7,3 +7,6 @@
 [submodule ".config/oh-my-zsh/custom/plugins/nix-zsh-completions"]
 	path = .config/oh-my-zsh/custom/plugins/nix-zsh-completions
 	url = https://github.com/nix-community/nix-zsh-completions
+[submodule "config-bak/.config/oh-my-zsh/custom/plugins/nix-zsh-completions"]
+	path = config-bak/.config/oh-my-zsh/custom/plugins/nix-zsh-completions
+	url = https://github.com/nix-community/nix-zsh-completions
