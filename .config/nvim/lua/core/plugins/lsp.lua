@@ -39,6 +39,10 @@ return {
       -- goto: https://github.com/VonHeikemen/lsp-zero.nvim#keybindings
       -- Autocomplete: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/autocomplete.md#basic-mappings
       lsp.default_keymaps({ buffer = bufnr })
+
+      vim.keymap.set({'n', 'x'}, 'gq', function()
+        vim.lsp.buf.format({async = false, timeout_ms = 10000})
+      end)
     end)
 
     -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
@@ -48,8 +52,9 @@ return {
       'lua_ls',
       'gopls',
       'terraformls',
-      'rnix'
-      -- Require npm
+      'nil_ls',
+      'clangd'
+      -- Requires npm
       -- 'yamlls',
       -- 'jsonls'
     })
@@ -58,6 +63,7 @@ return {
       servers = {
         ['lua_ls'] = { 'lua' },
         ['rust_analyzer'] = { 'rust' },
+        ['nil'] = { 'nix' },
       }
     })
 

@@ -42,3 +42,5 @@ require("lazy").setup("core.plugins", {
   -- 7. nix, go, python
   -- 8. Diagnostics keybindings
   -- 9. Learn windows, panes, buffers lol
+  -- 10. Comment shortcuts
+  -- 11. Global file search / replace
