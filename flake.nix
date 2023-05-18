@@ -16,7 +16,6 @@
       mkHost = import ./lib/mkHost.nix;
     in
     {
-      # NixOS VM on personal Macbook M1
       nixosConfigurations.vm-aarch64 = mkHost "vm-aarch64" {
         inherit nixpkgs home-manager;
         system = "aarch64-linux";

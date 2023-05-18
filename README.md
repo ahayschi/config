@@ -10,22 +10,28 @@
     * shared dotfiles
 * lib/ library funcs
 
+# Hosts
+* vm-aarch64
+    * NixOS VM on personal Macbook M1
+
 # How do I ...
 
-## Rebuild a host?
+**Rebuild a host?**
 
 Inside this flake dir, run switch and specify the host (defined in flake.nix outputs)
 ```sh
-nixos-rebuild switch --flake ".#${host}"
+sudo nixos-rebuild switch --flake ".#${host}"
 ```
 
 # Resources
 * Inspired by [mitchellh/nixos-config](https://github.com/mitchellh/nixos-config)
-* Excellent overview in [NixOS Setup Guide - Configuration / Home-Manager / Flakes](https://www.youtube.com/watch?v=AGVXJ-TIv3Y). Requires basic familarity with Nix language but otherwise very approachable.
+* Excellent overview in [NixOS Setup Guide - Configuration / Home-Manager / Flakes](https://www.youtube.com/watch?v=AGVXJ-TIv3Y)
+    * Requires basic familarity with Nix language but otherwise very approachable
 * home-manager [configuration options](https://nix-community.github.io/home-manager/options.html)
 * home-manager [NixOS module options](https://nix-community.github.io/home-manager/nixos-options.html)
 
 # TODO
+* Integrate dotfiles into home.nix
 * Configure ts home
 * Configure mac home
 
