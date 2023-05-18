@@ -11,6 +11,16 @@
     '';
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    vim
+    neovim
+  ];
+
   hardware.video.hidpi.enable = true;
 
   # Bootloader.
@@ -51,16 +61,6 @@
     layout = "us";
     xkbVariant = "";
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    neovim
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

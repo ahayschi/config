@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     curl
+    git
     jq
     tmux
     fzf
