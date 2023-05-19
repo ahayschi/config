@@ -7,10 +7,14 @@
     curl
     git
     jq
+    rg
+    fd
     tmux
     fzf
     htop
     gcc
+    make
+    node
   ];
 
   home.sessionVariables = {
