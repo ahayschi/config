@@ -24,4 +24,9 @@
     EDITOR = "nvim";
     PAGER = "less -FirSwX";
   };
+
+  programs.zsh = {
+    enable = true;
+    extraConfig = builtins.readFile ./dotfiles/.zshrc;
+  };
 }
