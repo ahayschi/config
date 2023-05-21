@@ -1,20 +1,22 @@
 { config, lib, pkgs, ... }: {
   home.stateVersion = "22.11";
 
-  programs.home-manager.enable = true;
-
   home.packages = with pkgs; [
     curl
+    wget
     git
     jq
-    rg
+    ripgrep
     fd
     tmux
     fzf
     htop
-    gcc
-    make
-    node
+    clang
+    clang-tools
+    gnumake
+    nodejs
+    unzip
+    rust-bin.stable.latest.default
   ];
 
   home.sessionVariables = {
@@ -25,8 +27,74 @@
     PAGER = "less -FirSwX";
   };
 
+  # Neovim Configuration
+  xdg.configFile.nvim = {
+    source = ../dotfiles/.config/nvim;
+    recursive = true;
+  };
+
+  # Tmux Configuration
+  home.file.".tmux.conf".source = ../dotfiles/.tmux.conf;
+
+  programs.home-manager.enable = true;
+
+  programs.git = {
+    enable = true;
+    userName = "Alex Hays";
+    userEmail = "ahaysx@gmail.com";
+    aliases = {
+      "co" = "checkout";
+      "ci" = "commit";
+      "br" = "branch";
+      "st" = "status";
+      "unstage" = "reset HEAD--";
+      "last" = "log -1 HEAD";
+    };
+    extraConfig = {
+      credential.helper = "${
+          pkgs.git.override { withLibsecret = true; }
+        }/bin/git-credential-libsecret";
+    };
+  };
+
   programs.zsh = {
     enable = true;
-    extraConfig = builtins.readFile ./dotfiles/.zshrc;
+    autocd = true;
+    enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
+    enableCompletion = true;
+
+    history = {
+     save = 100000;
+    };
+
+    shellAliases = {
+      ll = "ls -la";
+      vim = "nvim";
+    };
+
+    plugins = [
+      {
+        name = "powerlevel10k";
+        src = pkgs.zsh-powerlevel10k;
+        file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+      }
+      {
+        name = "powerlevel10k-config";
+        src = ../dotfiles/p10k;
+        file = "p10k.zsh";
+      }
+    ];
+
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" ];
+      custom = "$HOME/.config/oh-my-zsh";
+    };
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }

@@ -1,5 +1,4 @@
-return {
-  'VonHeikemen/lsp-zero.nvim',
+return { 'VonHeikemen/lsp-zero.nvim',
   branch = 'v2.x',
   dependencies = {
     -- LSP Support
@@ -50,13 +49,8 @@ return {
       'jedi_language_server',
       'rust_analyzer',
       'lua_ls',
-      'gopls',
       'terraformls',
       'nil_ls',
-      'clangd'
-      -- Requires npm
-      -- 'yamlls',
-      -- 'jsonls'
     })
     
     lsp.format_on_save({
@@ -69,6 +63,13 @@ return {
     
     -- Configure lua language server for neovim
     require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+
+    require('mason').setup {
+      log_level = vim.log.levels.DEBUG,
+    }
+
+    -- Speficically require clangd since it can't be installed via Mason on ARM64
+    require'lspconfig'.clangd.setup{}
     
     lsp.setup()
     
