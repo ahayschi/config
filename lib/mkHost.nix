@@ -1,9 +1,13 @@
-name: { nixpkgs, home-manager, system, user, homeDir }:
+name: { nixpkgs, home-manager, overlays, system, user, homeDir }:
 
 nixpkgs.lib.nixosSystem {
   inherit system;
 
   modules = [
+    {
+      nixpkgs.overlays = overlays;
+    }
+
     # i.e. hardware-configuration.nix
     ../hardware/${name}.nix
 
