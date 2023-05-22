@@ -50,11 +50,12 @@
       "unstage" = "reset HEAD--";
       "last" = "log -1 HEAD";
     };
-    extraConfig = {
-      credential.helper = "${
-          pkgs.git.override { withLibsecret = true; }
-        }/bin/git-credential-libsecret";
-    };
+    # Broken, needs fix: https://discourse.nixos.org/t/applications-not-finding-org-freedesktop-secrets/17667
+    # extraConfig = {
+    #   credential.helper = "${
+    #       pkgs.git.override { withLibsecret = true; }
+    #     }/bin/git-credential-libsecret";
+    # };
   };
 
   programs.zsh = {
