@@ -8,6 +8,7 @@
 * users/ 
     * namespaced user accounts and home-manager configs
     * shared dotfiles
+    * shared common home config
 * lib/ library funcs
 
 # Hosts
@@ -18,10 +19,20 @@
 
 **Rebuild a host?**
 
-Inside this flake dir, run switch and specify the host (defined in flake.nix outputs)
+Inside this flake dir, run switch and specify the host (defined in flake.nix outputs):
 ```sh
 sudo nixos-rebuild switch --flake ".#${host}"
 ```
+
+**Setup Mac Home?**
+
+Home Manager is [installed standalone](https://nix-community.github.io/home-manager/index.html#sec-install-standalone) on personal Macbook M1. A separate `home.nix` file exists to configure just the user environment there. Run switch and point it to this file:
+
+```sh
+home-manager switch -f users/alexh-darwin/home.nix -b backup
+```
+
+Once darwin-nix is setup, this will change.
 
 # Resources
 * Inspired by [mitchellh/nixos-config](https://github.com/mitchellh/nixos-config)
@@ -31,9 +42,5 @@ sudo nixos-rebuild switch --flake ".#${host}"
 * home-manager [NixOS module options](https://nix-community.github.io/home-manager/nixos-options.html)
 
 # TODO
-* Integrate dotfiles into home.nix
 * Configure ts home
-* Configure mac home
-
-Optional
-* Configure mac via darwin-nix
+* Setup darwin-nix
