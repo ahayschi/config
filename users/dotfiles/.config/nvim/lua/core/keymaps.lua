@@ -25,4 +25,3 @@ map('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', { noremap = tru
 -- Neotree
 map('n', '<leader>fe', '<cmd>Neotree toggle<CR>', { noremap = true, silent = true })
 
-

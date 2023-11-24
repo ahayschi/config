@@ -17,6 +17,10 @@ vim.opt.rtp:prepend(lazypath)
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 vim.g.mapleader = " "
 
+-- disable netrw before plugins to avoid flashing
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Setup plugins
 require("lazy").setup("core.plugins", {
   -- defaults = { lazy = true },
