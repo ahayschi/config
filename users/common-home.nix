@@ -26,7 +26,6 @@
     EDITOR = "nvim";
     PAGER = "less -FirSwX";
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#808080";
-    ZSH_AUTOSUGGEST_STRATEGY = "(history completion)";
   };
 
   # Neovim Configuration
@@ -100,8 +99,6 @@
         "gcloud"
         "kubectl"
         "copybuffer"
-        "zsh-autosuggestions"
-        "nix-zsh-completions"
         "vi-mode"
       ];
       custom = "$HOME/.config/oh-my-zsh";

@@ -29,7 +29,7 @@ sudo nixos-rebuild switch --flake ".#${host}"
 Home Manager is [installed standalone](https://nix-community.github.io/home-manager/index.html#sec-install-standalone) on personal Macbook M1. A separate `home.nix` file exists to configure just the user environment there. Run switch and point it to this file:
 
 ```sh
-home-manager switch -f users/alexh-darwin/home.nix -b backup
+home-manager switch -f users/alex-darwin/home.nix -b backup
 ```
 
 Once darwin-nix is setup, this will change.
