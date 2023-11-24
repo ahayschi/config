@@ -25,6 +25,8 @@
     LC_ALL = "en_US.UTF-8";
     EDITOR = "nvim";
     PAGER = "less -FirSwX";
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE = "fg=#808080";
+    ZSH_AUTOSUGGEST_STRATEGY = "(history completion)";
   };
 
   # Neovim Configuration
@@ -49,6 +51,8 @@
       "st" = "status";
       "unstage" = "reset HEAD--";
       "last" = "log -1 HEAD";
+      "clone-all" = "clone --recurse-submodules";
+      "pull-all" = "pull --recurse-submodules";
     };
     # Broken, needs fix: https://discourse.nixos.org/t/applications-not-finding-org-freedesktop-secrets/17667
     # extraConfig = {
@@ -67,6 +71,8 @@
 
     history = {
      save = 100000;
+     extended = true;
+     ignoreDups = true;
     };
 
     shellAliases = {
@@ -89,7 +95,15 @@
 
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" ];
+      plugins = [
+        "git"
+        "gcloud"
+        "kubectl"
+        "copybuffer"
+        "zsh-autosuggestions"
+        "nix-zsh-completions"
+        "vi-mode"
+      ];
       custom = "$HOME/.config/oh-my-zsh";
     };
   };

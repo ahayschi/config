@@ -21,6 +21,10 @@
     neovim
   ];
 
+  environment.pathsToLink = [
+    "/share/zsh"
+  ]
+
   hardware.video.hidpi.enable = true;
 
   # Bootloader.
