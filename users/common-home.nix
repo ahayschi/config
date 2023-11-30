@@ -17,6 +17,7 @@
     gnumake
     nodejs
     unzip
+    rustup
   ];
 
   home.sessionVariables = {
