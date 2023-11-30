@@ -10,3 +10,12 @@
 [submodule "config-bak/.config/oh-my-zsh/custom/plugins/nix-zsh-completions"]
 	path = config-bak/.config/oh-my-zsh/custom/plugins/nix-zsh-completions
 	url = https://github.com/nix-community/nix-zsh-completions
+[submodule "users/dotfiles/.tmux/plugins/tpm"]
+	path = users/dotfiles/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "users/dotfiles/.tmux/plugins/tmux-sensible"]
+	path = users/dotfiles/.tmux/plugins/tmux-sensible
+	url = https://github.com/tmux-plugins/tmux-sensible
+[submodule "users/dotfiles/.tmux/plugins/tmux-resurrect"]
+	path = users/dotfiles/.tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
