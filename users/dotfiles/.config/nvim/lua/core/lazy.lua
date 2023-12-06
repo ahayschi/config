@@ -37,14 +37,14 @@ require("lazy").setup("core.plugins", {
 })
 
 -- TODO
-  -- X1. LSP support
-  -- X2. LSP management (mason?)
-  -- X3. Completions
-  -- !4. File tree
-  -- !5. Fuzzy search for files (telescope?)
-  -- 6. Git extension
-  -- 7. nix, go, python
-  -- 8. Diagnostics keybindings
-  -- 9. Learn windows, panes, buffers lol
-  -- 10. Comment shortcuts
-  -- 11. Global file search / replace
+-- X1. LSP support
+-- X2. LSP management (mason?)
+-- X3. Completions
+-- !4. File tree
+-- !5. Fuzzy search for files (telescope?)
+-- 6. Git extension
+-- 7. nix, go, python
+-- 8. Diagnostics keybindings
+-- 9. Learn windows, panes, buffers lol
+-- 10. Comment shortcuts
+-- 11. Global file search / replace

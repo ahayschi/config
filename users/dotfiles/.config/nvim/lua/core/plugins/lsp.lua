@@ -11,12 +11,12 @@ return {
       end,
     },
     { 'williamboman/mason-lspconfig.nvim' },
-    
+
     -- Autocompletion
     { 'hrsh7th/nvim-cmp' },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'L3MON4D3/LuaSnip' },
-    
+
     -- Improve nvim-cmp
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-buffer' },
@@ -34,17 +34,17 @@ return {
         documentation_window = true,
       }
     })
-    
+
     lsp.on_attach(function(client, bufnr)
       -- goto: https://github.com/VonHeikemen/lsp-zero.nvim#keybindings
       -- Autocomplete: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v2.x/doc/md/autocomplete.md#basic-mappings
       lsp.default_keymaps({ buffer = bufnr })
-      
-      vim.keymap.set({'n', 'x'}, 'gq', function()
-        vim.lsp.buf.format({async = false, timeout_ms = 10000})
+
+      vim.keymap.set({ 'n', 'x' }, 'gq', function()
+        vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
       end)
     end)
-    
+
     -- https://github.com/williamboman/mason-lspconfig.nvim#available-lsp-servers
     lsp.ensure_installed({
       'jedi_language_server',
@@ -58,7 +58,7 @@ return {
       -- 'yamlls',
       -- 'jsonls'
     })
-    
+
     lsp.format_on_save({
       servers = {
         ['lua_ls'] = { 'lua' },
@@ -66,30 +66,34 @@ return {
         ['nil'] = { 'nix' },
       }
     })
-    
+
     -- Configure lua language server for neovim
     require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
+
     -- Speficically require clangd since it can't be installed via Mason on ARM64
-    require'lspconfig'.clangd.setup{}
+    require 'lspconfig'.clangd.setup {}
 
     lsp.setup()
-    
+
     local cmp = require('cmp')
     local cmp_buffer = require('cmp_buffer')
-    
+    local cmp_action = require('lsp-zero').cmp_action()
+
     cmp.setup({
       mapping = {
         ['<CR>'] = cmp.mapping.confirm({ select = false }),
+        ['<Tab>'] = cmp_action.luasnip_supertab(),
+        ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
       },
-      
+
       sources = {
-        {name = 'path'},
-        {name = 'nvim_lsp'},
-        {name = 'buffer', keyword_length = 3},
-        {name = 'luasnip', keyword_length = 2},
+        { name = 'path' },
+        { name = 'nvim_lsp' },
+        { name = 'buffer',  keyword_length = 3 },
+        { name = 'luasnip', keyword_length = 2 },
       },
-      
+
       sorting = {
         comparators = {
           cmp.config.compare.offset,
@@ -100,7 +104,7 @@ return {
           cmp.config.compare.sort_text,
           cmp.config.compare.length,
           cmp.config.compare.order,
-          function (...) return cmp_buffer:compare_locality(...) end,
+          function(...) return cmp_buffer:compare_locality(...) end,
         }
       },
     })

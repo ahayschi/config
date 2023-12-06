@@ -12,6 +12,9 @@ map('n', '<leader>v', ':e $MYVIMRC<CR>')
 map('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
 map('n', 'd[', '<cmd>lua vim.diagnostic.goto_prev()<CR>', { noremap = true, silent = true })
 map('n', 'd]', '<cmd>lua vim.diagnostic.goto_next()<CR>', { noremap = true, silent = true })
+map('n', '<space>d', '<cmd>lua vim.diagnostic.config({virtual_text = not vim.diagnostic.config().virtual_text})<CR>',
+  { silent = true, noremap = true })
+
 -- The following command requires plug-ins "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim", and optionally "kyazdani42/nvim-web-devicons" for icon support
 --map('n', 'dd', '<cmd>Telescope diagnostics<CR>', { noremap = true, silent = true })
 -- If you don't want to use the telescope plug-in but still want to see all the errors/warnings, comment out the telescope line and uncomment this:
