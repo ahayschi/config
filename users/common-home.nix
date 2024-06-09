@@ -49,10 +49,12 @@
       "ci" = "commit";
       "br" = "branch";
       "st" = "status";
+      "ll" = "log --oneline";
       "unstage" = "reset HEAD--";
       "last" = "log -1 HEAD";
       "clone-all" = "clone --recurse-submodules";
       "pull-all" = "pull --recurse-submodules";
+      "root" = "rev-parse --show-toplevel";
     };
     # Broken, needs fix: https://discourse.nixos.org/t/applications-not-finding-org-freedesktop-secrets/17667
     # extraConfig = {
@@ -65,8 +67,8 @@
   programs.zsh = {
     enable = true;
     autocd = true;
-    enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     enableCompletion = true;
 
     history = {
