@@ -5,6 +5,7 @@
 vim.opt.history = 1000
 -- precede each line with its line number
 vim.opt.number = true
+vim.opt.relativenumber = true
 -- options for Insert mode completion
 vim.opt.completeopt = { 'menuone', 'noselect' }
 -- enable mouse support all modes
@@ -31,7 +32,10 @@ vim.opt.hidden = true
 -- always draw the sign column
 vim.opt.signcolumn = 'yes'
 -- swap file will be written to disk if nothing is typed in this many ms
-vim.opt.updatetime = 520
+vim.opt.updatetime = 250
+-- Decrease mapped sequence wait time
+vim.opt.timeoutlen = 400
+-- save undo history
 vim.opt.undofile = true
 -- do not backup file when writing to an existing file
 vim.opt.backup = false
@@ -46,6 +50,9 @@ vim.opt.foldnestmax = 10
 --vim.opt.spell = true
 --vim.opt.spelllang = { 'en_us' }
 vim.opt.cmdheight = 2
+-- experimenting
+vim.opt.inccommand = 'split'
+vim.opt.scrolloff = 10
 
 vim.cmd [[colorscheme no-clown-fiesta]]
 
