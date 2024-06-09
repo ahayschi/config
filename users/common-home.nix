@@ -31,12 +31,12 @@
 
   # Neovim Configuration
   xdg.configFile.nvim = {
-    source = ./dotfiles/.config/nvim;
+    source = ./dotfiles/config/nvim;
     recursive = true;
   };
 
   # Tmux Configuration
-  home.file.".tmux.conf".source = ./dotfiles/.tmux.conf;
+  home.file.".tmux.conf".source = ./dotfiles/tmux.conf;
 
   programs.home-manager.enable = true;
 
@@ -104,7 +104,7 @@
         "copybuffer"
         "vi-mode"
       ];
-      custom = "$HOME/.config/oh-my-zsh";
+      custom = "$HOME/config/oh-my-zsh";
     };
   };
 

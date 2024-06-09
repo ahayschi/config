@@ -26,7 +26,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 -- show where the searched pattern is matching as you type
 vim.opt.incsearch = true
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 -- do not save when switching buffers
 vim.opt.hidden = true
 -- always draw the sign column
