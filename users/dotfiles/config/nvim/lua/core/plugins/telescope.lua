@@ -16,6 +16,13 @@ return {
     vim.keymap.set('n', '<leader>fk', builtin.keymaps, {})
     vim.keymap.set('n', '<leader>ft', builtin.treesitter, {})
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {})
+    vim.keymap.set('n', '<leader>fS', builtin.lsp_document_symbols, {})
+
+    -- LSP
+    vim.keymap.set('n', 'gr', builtin.lsp_references, {})
+    vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
+    vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
+    vim.keymap.set('n', 'go', builtin.lsp_type_definitions, {})
 
     telescope.setup {
       defaults = {
