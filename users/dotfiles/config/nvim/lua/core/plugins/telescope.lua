@@ -17,6 +17,14 @@ return {
     vim.keymap.set('n', '<leader>ft', builtin.treesitter, {})
     vim.keymap.set('n', '<leader>fd', builtin.diagnostics, {})
     vim.keymap.set('n', '<leader>fS', builtin.lsp_document_symbols, {})
+    vim.keymap.set('n', '<leader>pws', function()
+      local word = vim.fn.expand('<cword>')
+      builtin.grep_string({ search = word })
+    end)
+    vim.keymap.set('n', '<leader>pWs', function()
+      local word = vim.fn.expand('<cWORD>')
+      builtin.grep_string({ search = word })
+    end)
 
     -- LSP
     vim.keymap.set('n', 'gr', builtin.lsp_references, {})
